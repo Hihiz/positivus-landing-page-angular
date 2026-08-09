@@ -1,0 +1,10 @@
+.app {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100dvh;
+}
+
+.main {
+  grid-row: 1;
+  margin-top: 110px;
+}
