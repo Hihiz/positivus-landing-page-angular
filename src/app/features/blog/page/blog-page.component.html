@@ -1,0 +1,32 @@
+<section class="blog">
+  <div class="container">
+    <div class="blog-title-group">
+      <h1 class="blog-title">Our Blog</h1>
+      <p class="blog-title-description">
+        We use an agile approach to test assumptions and connect with the needs of your audience early and often.
+      </p>
+    </div>
+    <div class="blog-form-query">
+      <form class="blog-form" [formGroup]="searchForm">
+        <label class="visually-hidden" for="article">Артикль</label>
+        <input
+          class="article-input"
+          id="article"
+          type="text"
+          placeholder="Search articles..."
+          formControlName="article"
+        />
+      </form>
+    </div>
+    @if (searchQuery()) {
+      <p class="blog-search-result">
+        Results for <strong>{{ searchQuery() }}</strong> ({{ filteredPosts().length }} found)
+      </p>
+    }
+    <div class="blog-card-grid">
+      @for (post of filteredPosts(); track post.id) {
+        <app-blog-card [post]="post" (blogClick)="onBlogClick($event)" />
+      }
+    </div>
+  </div>
+</section>

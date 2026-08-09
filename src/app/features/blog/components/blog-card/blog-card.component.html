@@ -1,0 +1,34 @@
+<article class="blog-card">
+  <div class="blog-card-header">
+    <span class="green-badge">
+      <img [src]="post().categoryIcon" width="16" height="16" alt="" />
+      {{ post().categoryTitle }}
+    </span>
+    <time [attr.datetime]="post().date">{{ post().dateFormatted }}</time>
+  </div>
+
+  <h3 class="blog-card-title">{{ post().title }}</h3>
+  <p>
+    {{ post().description }}
+  </p>
+  <div class="blog-card-author-group">
+    <div class="blog-card-author">
+      <a
+        class="blog-card-link-author"
+        [routerLink]="post().authorLink.routerLink"
+        (click)="onBlogClick()"
+      >
+        <img [src]="post().authorAvatar" width="28" height="28" alt="" />
+        <span>{{ post().authorName }}</span>
+      </a>
+    </div>
+    <a
+      class="blog-card-link-readmore"
+      [routerLink]="post().readMoreLink.routerLink"
+      (click)="onBlogClick()"
+    >
+      <span>Read more</span>
+      <img src="/img/blog/link.svg" width="16" height="16" alt="" />
+    </a>
+  </div>
+</article>
