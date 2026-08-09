@@ -1,0 +1,26 @@
+<div class="team-card-grid team-card">
+  <img
+    class="team-card-img"
+    [src]="member().userIcon"
+    [alt]="member().userIconAlt"
+    width="106"
+    height="103"
+    loading="lazy"
+  />
+  <div class="team-card-info">
+    <h3>{{ member().name }}</h3>
+    <p>{{ member().position }}</p>
+  </div>
+  <a
+    routerLink="/"
+    fragment="top"
+    class="team-card-social-icon"
+    [aria-label]="member().ariaLabel"
+    (click)="onSocialClick()"
+  >
+    <img [src]="member().socialIcon" alt="" loading="lazy" width="34" height="34" />
+  </a>
+  <p class="team-card-description">
+    {{ member().description }}
+  </p>
+</div>
