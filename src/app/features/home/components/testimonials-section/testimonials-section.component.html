@@ -1,0 +1,58 @@
+<section class="testimonial">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="section-title-text">
+        <span class="section-title-span">Testimonials</span>
+      </h2>
+      <p class="section-description-text">
+        Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital
+        Marketing Services
+      </p>
+    </div>
+    <div class="testimonial-container">
+      <div class="testimonial-group" #slider>
+        @for (testimonial of testimonials(); track testimonial.author; let i = $index) {
+          <app-testimonial-card [testimonial]="testimonial" />
+        }
+      </div>
+
+      <div class="testimonial-navigation">
+        <button
+          class="nav-arrow-testimonial prev-btn"
+          type="button"
+          aria-label="Предыдущий отзыв"
+          (click)="scrollToPrev()"
+        >
+          <img
+            class="navigation-arrow-previous"
+            src="/img/testimonials/arrow.svg"
+            alt=""
+            width="24"
+            height="25"
+          />
+        </button>
+
+        <div class="nav-dots">
+          @for (i of dots(); track i) {
+            <button
+              class="nav-dot"
+              type="button"
+              (click)="scrollToIndex(i)"
+              [class.active]="activeIndex() === i"
+              [attr.aria-label]="'Отзыв ' + (i + 1) + ' из ' + dots().length"
+            ></button>
+          }
+        </div>
+
+        <button
+          class="nav-arrow-testimonial next-btn"
+          type="button"
+          aria-label="Следующий отзыв"
+          (click)="scrollToNext()"
+        >
+          <img src="/img/testimonials/arrow.svg" alt="" width="24" height="25" />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
