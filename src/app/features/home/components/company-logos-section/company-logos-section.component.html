@@ -1,0 +1,9 @@
+<section class="logotype">
+  <div class="container">
+    <div class="logotype-grid">
+      @for (item of logoItems; track $index) {
+        <img [src]="item.src" loading="lazy" [alt]="item.alt" width="125" height="55" />
+      }
+    </div>
+  </div>
+</section>
