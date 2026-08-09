@@ -1,0 +1,96 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-group">
+      <div class="footer-title">
+        <img
+          class="footer-logo"
+          src="/img/logos/default-white-logo.svg"
+          alt="Positivus"
+          loading="lazy"
+          width="180"
+          height="29"
+        />
+
+        <ul class="footer-menu">
+          @for (item of menuItems; track $index) {
+            <li>
+              <a [fragment]="item.fragment" [routerLink]="item.routerLink"> {{ item.label }}</a>
+            </li>
+          }
+        </ul>
+
+        <div class="footer-social-icon">
+          @for (item of socials; track $index) {
+            <a [href]="item.href" [attr.aria-label]="item.label" target="_blank" rel="noopener noreferrer">
+              <img [src]="item.icon" alt="" loading="lazy" />
+            </a>
+          }
+        </div>
+      </div>
+
+      <div class="footer-info">
+        <div class="footer-info-contact">
+          <h3>Contact us:</h3>
+
+          <p>Email: info@positivus.com</p>
+          <p>Phone: 123-456-789</p>
+
+          <div class="footer-into-address">
+            <p>Address: 1234 Main St</p>
+            <p>Moonstone City, Name State 12345</p>
+          </div>
+        </div>
+
+        <form class="subscribe-form" (submit)="onSubscribe($event)">
+          <label for="subscribe-email" class="visually-hidden">Email для подписки</label>
+          <input placeholder="Email" class="email-input" type="email" required id="subscribe-email" name="email" />
+          <button type="submit" class="subscribe-button">Subscribe to news</button>
+        </form>
+      </div>
+
+      <div class="privacy-footer">
+        <hr />
+        <div class="footer-attribution">
+          <p>
+            Design by
+            <a
+              class="attribution-link"
+              href="https://www.figma.com/@olgaaverchenko"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Olga</a
+            >
+          </p>
+          <span>|</span>
+          <p>
+            Licensed under
+            <a
+              class="attribution-link"
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CC BY 4.0</a
+            >
+          </p>
+          <span>|</span>
+          <p>
+            Coded by
+            <a
+              class="attribution-link"
+              href="https://github.com/Hihiz/positivus-landing-page"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Hihiz</a
+            >
+          </p>
+        </div>
+
+        <hr />
+        <div class="privacy">
+          <p>© 2026 Positivus. All Rights Reserved.</p>
+          <a class="privacy-footer-a" href="#privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
