@@ -1,0 +1,35 @@
+.logotype .container {
+  padding-block: 2rem;
+}
+
+.logotype-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(20px, 1fr));
+  justify-content: center;
+  place-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.logotype-grid img {
+  transition:
+    opacity 0.15s ease,
+    filter 0.15s ease;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  width: 125px;
+  height: 55px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logotype-grid img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logotype-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}

@@ -1,0 +1,17 @@
+<div class="service-card" [class]="`service-card-theme-` + service().cardTheme">
+  <div class="card-title">
+    <h3>
+      <span class="span-title" [class]="service().spanTheme">{{ service().title }}</span>
+    </h3>
+    <a
+      [routerLink]="service().routerLink"
+      [fragment]="service().fragment"
+      class="service-link"
+      (click)="onLearnMoreClick()"
+    >
+      <img [src]="service().linkIcon" loading="lazy" alt="" width="41" height="41" />
+      <span class="service-p" [class]="`color-` + service().pColor">Learn more</span>
+    </a>
+  </div>
+  <img class="card-logo" [src]="service().cardIcon" loading="lazy" alt="" width="210" height="170" />
+</div>

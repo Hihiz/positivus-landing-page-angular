@@ -1,0 +1,17 @@
+<app-hero-section />
+
+<app-company-logos-section />
+
+<app-services-section [services]="serviceItems" (learnMoreClick)="onServiceLearnMore($event)" />
+
+<app-cta-section />
+
+<app-case-studies-section />
+
+<app-working-process-section [steps]="steps" />
+
+<app-team-section [members]="teams" (socialClick)="onTeamSocialClick($event)" />
+
+<app-testimonials-section [testimonials]="testimonials" />
+
+<app-contact-form-section />

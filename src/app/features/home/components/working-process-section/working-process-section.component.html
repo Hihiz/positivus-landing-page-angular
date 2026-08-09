@@ -1,0 +1,40 @@
+<section class="working-process">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="section-title-text">
+        <span class="section-title-span">Our Working Process</span>
+      </h2>
+      <p class="section-description-text">Step-by-Step Guide to Achieving Your Business Goals</p>
+    </div>
+    <div class="working-process-group">
+      @for (step of steps(); track step.number; let i = $index) {
+        <div class="process-item" [class.active]="isOpen(i)">
+          <button
+            [attr.aria-expanded]="isOpen(i)"
+            (click)="toggleStep(i)"
+            class="button-process"
+            type="button"
+          >
+            <span class="title-process">
+              <span class="number-process">{{ step.number }}</span>
+              <span class="title-working-process">{{ step.title }}</span>
+            </span>
+
+            <img
+              class="icon-show-process"
+              [src]="isOpen(i) ? minusIcon : plusIcon"
+              alt=""
+              width="40"
+              height="40"
+            />
+          </button>
+          <div class="process-content" [class.is-open]="isOpen(i)">
+            <p class="process-description">
+              {{ step.description }}
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
