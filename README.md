@@ -3,13 +3,13 @@
 Современный адаптивный лендинг для digital-агентства, сверстанный по макету из Figma.
 
 ## 🌐 Demo
-[![Vercel](https://img.shields.io/badge/Vercel-Live-brightgreen?style=flat-square&logo=vercel)]()
+[![Vercel](https://img.shields.io/badge/Vercel-Live-brightgreen?style=flat-square&logo=vercel)](https://positivus-landing-page-angular.vercel.app)
 [![Angular](https://img.shields.io/badge/Angular-22-DD0031?style=flat-square&logo=angular)](https://angular.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 ![W3C-Validated](https://img.shields.io/badge/W3C-Validated-brightgreen?style=flat-square&logo=w3c)
 [![Lighthouse Performance](https://img.shields.io/badge/Lighthouse-96+-brightgreen?style=flat-square&logo=lighthouse)](https://developer.chrome.com/docs/lighthouse)
 
-👉 **[Посмотреть онлайн]()**
+👉 **[Посмотреть онлайн](https://positivus-landing-page-angular.vercel.app)**
 
 ## 🎨 Дизайн
 
