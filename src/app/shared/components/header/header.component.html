@@ -1,0 +1,48 @@
+<header class="header">
+  <div class="container">
+    <a href="https://github.com/Hihiz/positivus-landing-page-angular" target="_blank" rel="noopener noreferrer">
+      <img class="header-logo" src="/img/logos/default-logo.svg" width="160" height="40" alt="Логотип сайта"
+    /></a>
+
+    <button
+      class="hamburger-button"
+      type="button"
+      [class.active]="isMenuOpen()"
+      (click)="toggleMenu()"
+      aria-label="Открыть меню"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="hamburger-menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-menu" aria-label="Основная навигация">
+      <ul class="hamburger-menu" id="hamburger-menu" [class.active]="isMenuOpen()">
+        @for (item of menuItems; track $index) {
+          <li>
+            <a
+              class="hamburger-menu-a"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: item.routerLink === '/' }"
+              [fragment]="item.fragment"
+              [routerLink]="item.routerLink"
+              (click)="isMenuOpen.set(false)"
+              >{{ item.label }}</a
+            >
+          </li>
+        }
+        <li>
+          <a
+            href="https://github.com/Hihiz/positivus-landing-page-angular"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button-request"
+            >Request a quote</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
