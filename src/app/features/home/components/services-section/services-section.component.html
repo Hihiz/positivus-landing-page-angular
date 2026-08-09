@@ -1,0 +1,18 @@
+<section class="service" id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="section-title-text">
+        <span class="section-title-span">Services</span>
+      </h2>
+      <p class="section-description-text">
+        At our digital marketing agency, we offer a range of services to help businesses grow and
+        succeed online. These services include:
+      </p>
+    </div>
+    <div class="card-grid">
+      @for (card of services(); track $index) {
+        <app-service-card [service]="card" (learnMoreClick)="onLearnMore($event)" />
+      }
+    </div>
+  </div>
+</section>
