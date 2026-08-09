@@ -1,0 +1,97 @@
+<section class="contact-us">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="section-title-text">
+        <span class="section-title-span">Contact Us</span>
+      </h2>
+      <p class="section-description-text">
+        Connect with Us: Let's Discuss Your Digital Marketing Needs
+      </p>
+    </div>
+    <div class="div-form">
+      <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()" class="contact-us-form">
+        <div class="form-group">
+          <div class="radiobox-group">
+            <div>
+              <input
+                class="contact-up-radio-input"
+                type="radio"
+                formControlName="radioSelection"
+                value="Say Hi"
+                id="radio-type-say-hi"
+              />
+              <label for="radio-type-say-hi">Say Hi</label>
+            </div>
+            <div>
+              <input
+                class="contact-up-radio-input"
+                type="radio"
+                formControlName="radioSelection"
+                value="Get a Quote"
+                id="radio-type-quote"
+              />
+              <label for="radio-type-quote">Get a Quote</label>
+            </div>
+          </div>
+
+          <div class="input-form">
+            <label for="name">Name</label>
+            <input
+              class="contact-us-input border"
+              [class.is-invalid]="name?.invalid && (name?.touched || name?.dirty)"
+              type="text"
+              id="name"
+              placeholder="Name"
+              formControlName="name"
+            />
+            @if (name?.invalid && (name?.touched || name?.dirty)) {
+              @if (name?.hasError('required')) {
+                <small class="error-text">Name is required</small>
+              } @else if (name?.hasError('minlength')) {
+                <small class="error-text">Minimum 2 characters</small>
+              }
+            }
+          </div>
+
+          <div class="input-form">
+            <label for="email">Email*</label>
+            <input
+              class="contact-us-input border"
+              [class.is-invalid]="email?.invalid && (email?.touched || email?.dirty)"
+              type="email"
+              id="email"
+              placeholder="Email"
+              formControlName="email"
+            />
+            @if (email?.invalid && (email?.touched || email?.dirty)) {
+              @if (email?.hasError('required')) {
+                <small class="error-text">email is required</small>
+              } @else if (email?.hasError('email')) {
+                <small class="error-text">Please enter a valid email address</small>
+              }
+            }
+          </div>
+          <div class="input-form">
+            <label for="message">Message*</label>
+            <textarea
+              class="contact-us-input border textarea"
+              [class.is-invalid]="message?.invalid && (message?.touched || message?.dirty)"
+              id="message"
+              formControlName="message"
+              placeholder="Message"
+            ></textarea>
+            @if (message?.invalid && (email?.touched || message?.dirty)) {
+              @if (message?.hasError('required')) {
+                <small class="error-text">message is required</small>
+              } @else if (message?.hasError('minlength')) {
+                <small class="error-text">Minimum 2 characters</small>
+              }
+            }
+          </div>
+          <button type="submit" class="button-submit button-transition-green">Send Message</button>
+        </div>
+      </form>
+      <img class="contact-img" src="img/contact-us/Illustration.svg" alt="" />
+    </div>
+  </div>
+</section>
